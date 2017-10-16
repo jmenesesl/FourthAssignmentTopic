@@ -49,6 +49,18 @@ public class Main {
 		
 		LocalDateTime now = LocalDateTime.now();
 		System.out.println(manager.getNext());
+		
+		System.out.println("Vamos a comparar matriculas: \n");
+		String matricula1 = "3408hcp";
+		String matricula2 = "3408jcp";
+		
+		System.out.println(matricula2.compareTo(matricula1));
+		
+		List<ITVLocalDateTime> itvs = manager.from("b");
+		
+		for (ITVLocalDateTime itv: itvs) {
+		System.out.println(itv.getWhere());
+		}
 	}
 
 }
