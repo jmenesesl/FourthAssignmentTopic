@@ -48,6 +48,7 @@ public class Main {
 		System.out.println(LocalDateTime.now());
 		
 		LocalDateTime now = LocalDateTime.now();
+		System.out.println(manager.getNext());
 	}
 
 }

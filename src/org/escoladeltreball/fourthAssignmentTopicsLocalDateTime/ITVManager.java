@@ -30,7 +30,7 @@ public abstract class ITVManager implements Manager {
 	private void setup(String itvFile) throws Exception {
 
 		List<String> records = Files.readAllLines(Paths.get(itvFile));
-		List<ITVLocalDateTime> itvs = new ArrayList<>();
+		itvs = new ArrayList<>();
 
 		for (String record : records) {
 			String[] fields = record.split(",");
