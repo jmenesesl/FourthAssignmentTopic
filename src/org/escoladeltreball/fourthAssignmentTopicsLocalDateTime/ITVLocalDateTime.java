@@ -1,11 +1,10 @@
 /**
  * 
  */
-package org.escoladeltreball.fourthAssignmentTopics;
+package org.escoladeltreball.fourthAssignmentTopicsLocalDateTime;
 
-import java.time.LocalDate;
+
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 /**
  * @author iaw26068632
