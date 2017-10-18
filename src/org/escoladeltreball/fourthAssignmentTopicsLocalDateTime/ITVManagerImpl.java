@@ -66,9 +66,14 @@ public class ITVManagerImpl extends ITVManager {
 
 	@Override
 	public List<ITVLocalDateTime> from(String where) throws Exception {
-		List<ITVLocalDateTime> orderByFrom = null;
-		orderByFrom = new ArrayList<>(itvs);
-		orderByFrom.sort(new ITVWhereComparator());
+		List<ITVLocalDateTime> orderByFrom = new ArrayList<>();
+		for (ITVLocalDateTime itv : itvs) {
+			if(itv.getWhere().equals(where)) {
+				orderByFrom.add(itv);
+			}
+		}
+//		orderByFrom = new ArrayList<>(itvs);
+//		orderByFrom.sort(new ITVWhereComparator());
 		return orderByFrom;
 	}
 
@@ -76,9 +81,11 @@ public class ITVManagerImpl extends ITVManager {
 	public List<ITVLocalDateTime> from(LocalDateTime ini, LocalDateTime fin) throws Exception {
 		List<ITVLocalDateTime> itvsFromDates = new ArrayList<>();
 		for (ITVLocalDateTime itv : itvs) {
-
+			if (itv.getDate().isBefore(fin) && itv.getDate().isAfter(ini)) {
+				itvsFromDates.add(itv);
+			}
 		}
-		return null;
+		return itvsFromDates;
 	}
 
 	// @Override
